@@ -1,0 +1,698 @@
+/* Tailwind CSS Directives - Disable CSS validation warnings */
+/* eslint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom premium styles for Avarix AI */
+@layer components {
+  .hero-text-shadow {
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .premium-gradient {
+    background: linear-gradient(135deg, rgba(163, 230, 53, 0.1) 0%, rgba(16, 185, 129, 0.1) 50%, rgba(6, 182, 212, 0.05) 100%);
+  }
+  
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .premium-glow {
+    box-shadow: 
+      0 0 50px rgba(163, 230, 53, 0.1),
+      0 0 100px rgba(16, 185, 129, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  .smooth-transition {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Apple-Quality Animations */
+  .premium-float {
+    animation: premiumFloat 8s ease-in-out infinite;
+  }
+
+  .premium-float-delayed {
+    animation: premiumFloat 8s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .premium-float-slow {
+    animation: premiumFloatSlow 12s ease-in-out infinite;
+  }
+
+  .premium-parallax {
+    transform: translateY(0);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .premium-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .premium-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .premium-scale-hover {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .premium-scale-hover:hover {
+    transform: scale(1.02) translateY(-2px);
+  }
+
+  .premium-glow-pulse {
+    animation: premiumGlowPulse 3s ease-in-out infinite;
+  }
+
+  .premium-text-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(163, 230, 53, 0.8) 0%,
+      rgba(163, 230, 53, 1) 50%,
+      rgba(16, 185, 129, 1) 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: premiumShimmer 3s linear infinite;
+  }
+
+  .premium-slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: premiumSlideUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .premium-stagger-1 { animation-delay: 0.1s; }
+  .premium-stagger-2 { animation-delay: 0.2s; }
+  .premium-stagger-3 { animation-delay: 0.3s; }
+  .premium-stagger-4 { animation-delay: 0.4s; }
+  .premium-stagger-5 { animation-delay: 0.5s; }
+  .premium-stagger-6 { animation-delay: 0.6s; }
+
+  /* Premium Navigation Animations */
+  .nav-glass-morph {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-item-hover {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-item-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.1), transparent);
+    transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .nav-item-hover:hover::before {
+    left: 100%;
+  }
+
+  .nav-gradient-border {
+    position: relative;
+    background: linear-gradient(90deg, rgba(163, 230, 53, 0.1), rgba(16, 185, 129, 0.1));
+    background-size: 200% 100%;
+    animation: navGradientFlow 8s ease-in-out infinite;
+  }
+
+  .premium-nav-float {
+    animation: navFloat 6s ease-in-out infinite;
+  }
+
+  .premium-glow-nav {
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(163, 230, 53, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-brand-hover {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .nav-cta-premium {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nav-cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+  }
+
+  .nav-cta-premium:hover::before {
+    left: 100%;
+  }
+
+  /* Premium Logo Design System */
+  .avarix-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .avarix-logo-text {
+    position: relative;
+    font-weight: 800;
+    font-size: 1.375rem;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 25%, #f8fafc 50%, #ffffff 75%, #f1f5f9 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    animation: logoShimmer 12s ease-in-out infinite;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 8px 16px rgba(20, 184, 166, 0.1);
+    font-feature-settings: 'salt' 1, 'ss01' 1, 'ss02' 1;
+    transform: translateZ(0);
+  }
+
+  /* Sophisticated Letter "A" */
+  .avarix-logo-letter {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0f766e 100%);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.875rem;
+    box-shadow: 
+      0 8px 32px rgba(20, 184, 166, 0.3),
+      0 4px 16px rgba(13, 148, 136, 0.2),
+      0 2px 8px rgba(15, 118, 110, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    transform: perspective(1000px) rotateY(-5deg);
+  }
+
+  .avarix-logo-letter::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 0.875rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .avarix-letter-a {
+    font-family: 'SF Pro Display', -apple-system, 'Inter', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    color: #000000;
+    text-align: center;
+    line-height: 0.85;
+    position: relative;
+    z-index: 2;
+    letter-spacing: -0.05em;
+    font-feature-settings: 'liga', 'kern';
+    text-rendering: optimizeLegibility;
+    text-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.15),
+      0 0 8px rgba(0, 0, 0, 0.05);
+    transform: perspective(100px) rotateX(-2deg);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Futuristic "A" Enhancement */
+  .avarix-letter-a::after {
+    content: 'A';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'SF Pro Display', -apple-system, 'Inter', 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+    color: rgba(255, 255, 255, 0.15);
+    transform: translate(1px, 1px) scale(1.02);
+    z-index: 1;
+    letter-spacing: -0.05em;
+    transition: all 0.4s ease;
+  }
+
+  /* Premium Letter "A" Effects */
+  .avarix-letter-a::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: futuristicSweep 6s ease-in-out infinite;
+  }
+
+  @keyframes futuristicSweep {
+    0%, 90%, 100% {
+      opacity: 0;
+      transform: rotate(45deg) translateX(-200%);
+    }
+    5%, 15% {
+      opacity: 0.3;
+      transform: rotate(45deg) translateX(200%);
+    }
+  }
+
+  /* Premium Hover Effects */
+  .avarix-logo:hover .avarix-logo-letter {
+    transform: perspective(1000px) scale(1.08) rotateY(5deg) translateZ(20px);
+    box-shadow: 
+      0 12px 48px rgba(20, 184, 166, 0.5),
+      0 8px 24px rgba(13, 148, 136, 0.4),
+      0 4px 12px rgba(15, 118, 110, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #115e59 100%);
+  }
+
+  .avarix-logo:hover .avarix-logo-letter::before {
+    opacity: 1;
+  }
+
+  .avarix-logo:hover .avarix-letter-a {
+    transform: perspective(100px) rotateX(0deg) scale(1.05);
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 0 12px rgba(255, 255, 255, 0.3),
+      0 0 24px rgba(163, 230, 53, 0.2);
+  }
+
+  .avarix-logo:hover .avarix-letter-a::before {
+    opacity: 1;
+    transform: rotate(45deg) translateX(100%);
+  }
+
+  .avarix-logo:hover .avarix-letter-a::after {
+    color: rgba(255, 255, 255, 0.25);
+    transform: translate(0.5px, 0.5px) scale(1.01);
+  }
+
+  .avarix-logo:hover .avarix-logo-text {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 30%, #f8fafc 50%, #0f766e 70%, #115e59 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 300% 300%;
+    animation: logoShimmer 8s ease-in-out infinite;
+    transform: translateZ(10px);
+    text-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.2),
+      0 12px 24px rgba(20, 184, 166, 0.2);
+  }
+
+  /* Tagline Styling */
+  .avarix-tagline {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 1) 0%, rgba(13, 148, 136, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 1;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    font-feature-settings: 'case' 1, 'ss01' 1;
+    animation: taglinePulse 3s ease-in-out infinite;
+  }
+
+  @keyframes taglinePulse {
+    0%, 100% {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+  }
+
+  .avarix-logo:hover .avarix-tagline {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 1) 0%, rgba(13, 148, 136, 1) 50%, rgba(15, 118, 110, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: taglineShimmer 2s ease-in-out infinite;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.2),
+      0 4px 8px rgba(20, 184, 166, 0.2);
+  }
+
+  @keyframes taglineShimmer {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Responsive Logo Scaling */
+  @media (max-width: 768px) {
+    .avarix-logo-text {
+      font-size: 1.25rem;
+    }
+    
+    .avarix-logo-letter {
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-right: 0.75rem;
+    }
+
+    .avarix-letter-a {
+      font-size: 1.5rem;
+    }
+
+    .avarix-letter-a::after {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Alternative Light Background Version */
+  .avarix-logo.light-mode .avarix-logo-text {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #111827 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .avarix-logo.light-mode .avarix-tagline {
+    color: rgba(107, 114, 128, 0.8);
+  }
+}
+
+/* Premium Keyframes */
+@keyframes premiumFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  50% { 
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% { 
+    transform: translateY(-12px) rotate(-0.5deg);
+  }
+}
+
+@keyframes premiumFloatSlow {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+  }
+  50% { 
+    transform: translateY(-15px) scale(1.02);
+  }
+}
+
+@keyframes premiumGlowPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(163, 230, 53, 0.4), 0 0 80px rgba(16, 185, 129, 0.2);
+  }
+}
+
+@keyframes premiumShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes premiumSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium Navigation Keyframes */
+@keyframes navGradientFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes navFloat {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-2px);
+  }
+}
+
+/* Premium Logo Keyframes */
+@keyframes logoShimmer {
+  0%, 100% { 
+    background-position: 0% 50%; 
+  }
+  50% { 
+    background-position: 100% 50%; 
+  }
+}
+
+/* Elite CTA Animations */
+@keyframes eliteGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 20px rgba(163, 230, 53, 0.3),
+      0 0 40px rgba(16, 185, 129, 0.2),
+      0 0 80px rgba(6, 182, 212, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 40px rgba(163, 230, 53, 0.5),
+      0 0 80px rgba(16, 185, 129, 0.3),
+      0 0 120px rgba(6, 182, 212, 0.2);
+  }
+}
+
+@keyframes futuristicPulse {
+  0%, 100% { 
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes borderFlow {
+  0%, 100% { 
+    background-position: 0% 50%;
+    opacity: 0.3;
+  }
+  50% { 
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes sophisticatedFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  33% { 
+    transform: translateY(-12px) rotate(1deg);
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translateY(-6px) rotate(-0.5deg);
+    opacity: 0.7;
+  }
+}
+
+/* Elite CSS Classes */
+.elite-glow {
+  animation: eliteGlow 4s ease-in-out infinite;
+}
+
+.futuristic-pulse {
+  animation: futuristicPulse 3s ease-in-out infinite;
+}
+
+.border-flow {
+  animation: borderFlow 3s linear infinite;
+}
+
+.sophisticated-float {
+  animation: sophisticatedFloat 6s ease-in-out infinite;
+}
+
+
+
+/* Enhanced animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient-x {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Typography enhancements */
+@layer base {
+  h1, h2, h3 {
+    letter-spacing: -0.02em;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  .tracking-tight {
+    letter-spacing: -0.025em;
+  }
+  
+  .font-display {
+    font-feature-settings: "ss01" 1, "ss02" 1;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
