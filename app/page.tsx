@@ -10,7 +10,6 @@ export default function AvarixLanding() {
   const [activeFeature, setActiveFeature] = useState(0)
   const [isMounted, setIsMounted] = useState(false)
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setIsMounted(true)
@@ -27,26 +26,6 @@ export default function AvarixLanding() {
       clearInterval(interval)
     }
   }, [])
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isMobileMenuOpen && event.target instanceof Element) {
-        const mobileMenu = document.querySelector('[data-mobile-menu]')
-        const menuButton = document.querySelector('[data-mobile-menu-button]')
-        
-        if (mobileMenu && !mobileMenu.contains(event.target) && 
-            menuButton && !menuButton.contains(event.target)) {
-          setIsMobileMenuOpen(false)
-        }
-      }
-    }
-
-    if (isMobileMenuOpen) {
-      document.addEventListener('click', handleClickOutside)
-      return () => document.removeEventListener('click', handleClickOutside)
-    }
-  }, [isMobileMenuOpen])
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!isMounted) {
@@ -79,34 +58,21 @@ export default function AvarixLanding() {
             </div>
 
             {/* Premium CTA Section */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center">
               {/* Premium CTA Button */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-emerald-500 rounded-2xl blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
                 <Button 
                   onClick={() => setIsCalendlyOpen(true)}
-                  className="relative bg-gradient-to-r from-lime-400 to-emerald-500 text-black hover:from-lime-300 hover:to-emerald-400 font-semibold px-8 py-3 rounded-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-lime-400/25 text-sm tracking-wide"
+                  className="relative bg-gradient-to-r from-lime-400 to-emerald-500 text-black hover:from-lime-300 hover:to-emerald-400 font-semibold px-6 sm:px-8 py-3 rounded-2xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-lime-400/25 text-sm tracking-wide"
                 >
                   <span className="flex items-center space-x-2">
-                    <span>Book a Discovery Call</span>
+                    <span className="hidden sm:inline">Book a Discovery Call</span>
+                    <span className="sm:hidden">Book Call</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                   </span>
                 </Button>
               </div>
-
-              {/* Mobile Menu Button */}
-              <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="lg:hidden p-2 rounded-xl bg-white/[0.05] border border-white/10 hover:bg-white/[0.1] transition-all duration-300"
-                aria-label="Toggle mobile menu"
-                data-mobile-menu-button
-              >
-                <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-                  <div className={`w-full h-0.5 bg-gray-300 rounded-full transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                  <div className={`w-full h-0.5 bg-gray-300 rounded-full transition-opacity duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
-                  <div className={`w-full h-0.5 bg-gray-300 rounded-full transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-                </div>
-              </button>
             </div>
           </div>
         </div>
@@ -114,40 +80,6 @@ export default function AvarixLanding() {
         {/* Subtle bottom border glow */}
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-lime-400/20 to-transparent" />
         
-        {/* Mobile Menu Overlay */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/5 z-40" data-mobile-menu>
-            <div className="max-w-7xl mx-auto px-6 py-6">
-              <div className="space-y-4">
-                <a 
-                  href="#platform" 
-                  className="block py-3 px-4 text-white hover:text-lime-400 hover:bg-white/[0.05] rounded-xl transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  How It Works
-                </a>
-                <a 
-                  href="#solutions" 
-                  className="block py-3 px-4 text-white hover:text-lime-400 hover:bg-white/[0.05] rounded-xl transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Solutions
-                </a>
-                <div className="border-t border-white/10 pt-4 mt-4">
-                  <Button 
-                    onClick={() => {
-                      setIsCalendlyOpen(true)
-                      setIsMobileMenuOpen(false)
-                    }}
-                    className="w-full bg-gradient-to-r from-lime-400 to-emerald-500 text-black hover:from-lime-300 hover:to-emerald-400 font-semibold px-6 py-3 rounded-xl"
-                  >
-                    Book Discovery Call
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
 
       {/* Hero Section */}
